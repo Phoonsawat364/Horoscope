@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon</title>
+    <style>
+      :root {
+        --bg: #070d24;
+        --card: #121a3f;
+        --text: #edf1ff;
+        --muted: #aeb8de;
+        --gold: #f0c270;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Prompt", sans-serif;
+        background: radial-gradient(circle at top, #1a2a64 0%, var(--bg) 48%);
+        color: var(--text);
+      }
+
+      .card {
+        width: min(560px, 92%);
+        padding: 34px 24px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: var(--card);
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        color: var(--gold);
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      a {
+        margin-top: 20px;
+        display: inline-block;
+        color: var(--text);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <h1>Coming Soon</h1>
+      <p>หน้านี้กำลังจัดทำและจะเปิดใช้งานในเร็วๆ นี้</p>
+      <a href="index.html">กลับหน้าหลัก</a>
+    </main>
+  </body>
+</html>
