@@ -281,6 +281,17 @@ img {
   margin-top: 8px;
 }
 
+.hero-guide-note {
+  margin: 10px 0 0;
+  color: #b9c5ee;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.hero-guide-note strong {
+  color: #e7ecff;
+}
+
 .section {
   padding: 52px 0;
 }
