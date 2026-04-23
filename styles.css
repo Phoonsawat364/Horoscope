@@ -1,10 +1,10 @@
 :root {
-  --bg: #060b21;
-  --bg2: #0a1333;
+  --bg: #030617;
+  --bg2: #0b1232;
   --text: #edf1ff;
   --muted: #a7b1d6;
   --gold: #d5a55a;
-  --card: #111a3d;
+  --card: #101631;
   --line: rgba(255, 255, 255, 0.14);
 }
 
@@ -18,7 +18,8 @@ body {
   padding: 0;
   font-family: "Prompt", sans-serif;
   color: var(--text);
-  background: var(--bg);
+  background: radial-gradient(circle at top, #152758 0%, #040817 45%, #02040f 100%);
+  background-attachment: fixed;
 }
 
 a {
@@ -37,11 +38,12 @@ img {
 }
 
 .site-header {
-  background: #11152f;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(7, 10, 30, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
   top: 0;
   z-index: 20;
+  backdrop-filter: blur(8px);
 }
 
 .nav-wrap {
@@ -141,24 +143,32 @@ img {
 }
 
 .hero {
-  padding: 54px 0 26px;
-  background: linear-gradient(rgba(6, 11, 33, 0.5), rgba(6, 11, 33, 0.75)),
-    radial-gradient(circle at center, rgba(70, 106, 252, 0.3), transparent 42%),
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.14) 0 1px, transparent 2px),
-    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.14) 0 1px, transparent 2px),
-    linear-gradient(180deg, #172251 0%, #091026 100%);
-  background-size: auto, auto, 120px 120px, 140px 140px, auto;
+  padding: 72px 0 52px;
+  min-height: 78vh;
+  background: linear-gradient(rgba(3, 6, 22, 0.6), rgba(3, 6, 22, 0.85)),
+    url("https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1800&q=80")
+      center / cover no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-a {
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr;
-  gap: 28px;
-  align-items: start;
+  grid-template-columns: 1fr;
+  gap: 0;
+  justify-items: center;
+  align-items: center;
+  min-height: 62vh;
 }
 
 .hero-main {
-  padding-top: 8px;
+  padding-top: 0;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: min(760px, 100%);
 }
 
 .hero-kicker {
@@ -169,56 +179,72 @@ img {
 
 .hero h1 {
   margin: 0 0 14px;
-  font-size: clamp(2.2rem, 4vw, 4.1rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  vertical-align: bottom;
+  font-size: clamp(2.2rem, 4vw, 3.7rem);
   line-height: 1.2;
   text-transform: none;
+  max-width: 20ch;
+}
+
+.hero h1 .keep-together {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  white-space: nowrap;
 }
 
 .hero-desc {
   color: #cad3f8;
-  max-width: 70ch;
+  max-width: 62ch;
   margin: 0 0 18px;
 }
 
 .hero-actions {
   display: flex;
   gap: 10px;
-  margin-bottom: 14px;
+  margin-top: 12px;
+  justify-content: center;
 }
 
 .hero-mini-grid {
   display: grid;
-  gap: 10px;
+  gap: 8px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .hero-mini-below {
   margin-top: 6px;
-  max-width: 560px;
+  max-width: 520px;
 }
 
 .hero-mini-card {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.03);
-  border-radius: 18px;
-  padding: 9px 10px;
+  border-radius: 14px;
+  padding: 7px 8px;
 }
 
 .hero-mini-card span {
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   display: block;
 }
 
 .hero-mini-card strong {
-  margin-top: 3px;
-  font-size: 0.9rem;
+  margin-top: 2px;
+  font-size: 0.82rem;
   display: block;
 }
 
 .hero-guide-card {
   border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(180deg, rgba(10, 20, 52, 0.92), rgba(8, 14, 38, 0.88));
   border-radius: 22px;
   padding: 18px;
   align-self: stretch;
@@ -304,7 +330,26 @@ img {
 }
 
 .section-dark {
-  background: #070d24;
+  background: #050a1f;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+main > section {
+  grid-column: 1 / -1;
+}
+
+main > #path {
+  grid-column: 1;
+}
+
+main > #videos {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
 }
 
 .section-title {
@@ -312,6 +357,7 @@ img {
   text-transform: uppercase;
   margin: 0 0 10px;
   font-size: clamp(1.3rem, 2.1vw, 2rem);
+  letter-spacing: 0.6px;
 }
 
 #topics .section-title {
@@ -336,13 +382,23 @@ img {
   display: grid;
   gap: 14px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 20px;
 }
 
 .feature-card {
-  background: linear-gradient(180deg, #1c2758, #121a40);
+  background: linear-gradient(180deg, #1a244d, #101632);
   border: 1px solid var(--line);
-  padding: 18px;
+  padding: 12px;
   border-radius: 18px;
+  overflow: hidden;
+}
+
+.feature-card img {
+  width: 100%;
+  height: 138px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
 }
 
 .feature-card h3 {
@@ -357,8 +413,9 @@ img {
 }
 
 .stats-band {
-  background: linear-gradient(180deg, rgba(14, 27, 63, 0.8), rgba(10, 18, 43, 0.8)),
-    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.14) 0 1px, transparent 2px);
+  background: linear-gradient(180deg, rgba(13, 24, 59, 0.95), rgba(9, 17, 44, 0.95)),
+    url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=80")
+      center / cover no-repeat;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -374,7 +431,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 6px;
   min-height: 34px;
 }
 
@@ -388,9 +445,11 @@ img {
 
 .stat-text {
   color: #eef2ff;
-  font-size: 1.06rem;
+  font-size: 1rem;
   font-weight: 500;
   white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
 }
 
 .zodiac-grid {
@@ -401,7 +460,7 @@ img {
 
 .zodiac-item {
   border: 1px solid var(--line);
-  background: #101a3d;
+  background: linear-gradient(180deg, #0f1532, #0b1129);
   padding: 14px 16px;
   text-align: left;
   display: flex;
@@ -410,6 +469,44 @@ img {
   border-radius: 18px;
   min-height: 112px;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  padding-top: 54px;
+}
+
+.zodiac-item::before {
+  content: "✦";
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  display: grid;
+  place-items: center;
+  color: #f4c97f;
+}
+
+.zodiac-item:nth-child(2)::before {
+  content: "☉";
+}
+.zodiac-item:nth-child(3)::before {
+  content: "☾";
+}
+.zodiac-item:nth-child(4)::before {
+  content: "☿";
+}
+.zodiac-item:nth-child(5)::before {
+  content: "♀";
+}
+.zodiac-item:nth-child(6)::before {
+  content: "♂";
+}
+.zodiac-item:nth-child(7)::before {
+  content: "♃";
+}
+.zodiac-item:nth-child(8)::before {
+  content: "♄";
 }
 
 #topics .zodiac-item:hover {
@@ -445,7 +542,14 @@ img {
 
 .path-head h2 {
   margin: 0;
-  font-size: clamp(1.5rem, 2.7vw, 2.2rem);
+  font-size: clamp(1.2rem, 2.1vw, 1.8rem);
+  line-height: 1.2;
+}
+
+#videos .section-title {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.1vw, 1.8rem);
+  line-height: 1.2;
 }
 
 .path-head p {
@@ -464,7 +568,7 @@ img {
   gap: 14px;
   border: 1px solid var(--line);
   border-radius: 22px;
-  background: linear-gradient(270deg, rgba(86, 111, 210, 0.24), rgba(18, 26, 63, 0.95) 58%);
+  background: linear-gradient(270deg, rgba(86, 111, 210, 0.2), rgba(12, 20, 48, 0.95) 58%);
   padding: 16px 18px;
 }
 
@@ -584,9 +688,7 @@ img {
 }
 
 .video-row {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  display: block;
 }
 
 .video-card {
@@ -597,6 +699,11 @@ img {
   flex-direction: column;
   border-radius: 18px;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  display: none;
+}
+
+.video-card.is-active {
+  display: flex;
 }
 
 .video-card:hover {
@@ -631,6 +738,322 @@ img {
   font-weight: 600;
 }
 
+#zodiac-wheel .section-title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.zodiac-wheel-card {
+  --wheel-size: min(540px, 90vw);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(rgba(5, 10, 35, 0.45), rgba(5, 10, 35, 0.65)),
+    url("img/c58d078a-856c-4aed-9ff9-0bf536e245f2.jpg") center / cover no-repeat;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.zodiac-wheel-circle {
+  --wheel-size: min(540px, 90vw);
+  --badge-size: clamp(34px, 4vw, 44px);
+  --orbit: calc((var(--wheel-size) / 2) - 108px);
+  --icon-orbit: calc((var(--wheel-size) / 2) - 30px);
+  width: var(--wheel-size);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background:
+    linear-gradient(rgba(7, 12, 34, 0.45), rgba(7, 12, 34, 0.55)),
+    url("img/c58d078a-856c-4aed-9ff9-0bf536e245f2.jpg") center / cover no-repeat,
+    repeating-conic-gradient(
+      from -90deg,
+      rgba(255, 255, 255, 0.08) 0deg 14.2deg,
+      rgba(0, 0, 0, 0.06) 14.2deg 15deg,
+      transparent 15deg 30deg
+    ),
+    repeating-conic-gradient(
+      from -90deg,
+      rgba(255, 255, 255, 0.16) 0deg 0.8deg,
+      transparent 0.8deg 30deg
+    ),
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.12), rgba(10, 16, 42, 0.85) 62%);
+  box-shadow: inset 0 0 44px rgba(8, 12, 35, 0.85), 0 10px 28px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.zodiac-wheel-circle::before,
+.zodiac-wheel-circle::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.zodiac-wheel-circle::before {
+  inset: 14%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.zodiac-wheel-circle::after {
+  inset: 27.5%;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+}
+
+.zodiac-icon-ring,
+.zodiac-wheel-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  animation: zodiac-orbit-spin 36s linear infinite;
+}
+
+.zodiac-icon-ring {
+  z-index: 4;
+}
+
+.zodiac-wheel-list {
+  z-index: 3;
+}
+
+.zodiac-icon-ring li,
+.zodiac-wheel-list li {
+  --step: calc(360deg / 12);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.zodiac-icon-ring li {
+  transform: translate(-50%, -50%) rotate(calc(var(--i) * var(--step))) translateY(calc(-1 * var(--icon-orbit)))
+    rotate(calc(var(--i) * var(--step) * -1));
+}
+
+.zodiac-icon-ring li span {
+  width: clamp(34px, 4vw, 44px);
+  height: clamp(34px, 4vw, 44px);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: clamp(1.05rem, 2.4vw, 1.55rem);
+  color: #f2c677;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+  opacity: 1;
+  position: relative;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.zodiac-icon-ring li:hover span {
+  transform: scale(1.08);
+  border-color: rgba(255, 223, 156, 0.7);
+  box-shadow: 0 0 14px rgba(185, 145, 255, 0.45);
+}
+
+.zodiac-side-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0, -50%);
+  min-width: 96px;
+  text-align: center;
+  font-size: 0.86rem;
+  line-height: 1;
+  color: #e9f0ff;
+  background: rgba(8, 12, 34, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  padding: 8px 12px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 8;
+}
+
+.zodiac-side-label.is-visible {
+  opacity: 1;
+}
+
+.zodiac-wheel-list li {
+  transform: translate(-50%, -50%) rotate(calc(var(--i) * var(--step))) translateY(calc(-1 * var(--orbit)))
+    rotate(calc(var(--i) * var(--step) * -1));
+}
+
+.zodiac-wheel-list li span {
+  width: var(--badge-size);
+  height: var(--badge-size);
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: clamp(1.45rem, 3.2vw, 2.25rem);
+  color: #ffe9bc;
+  background: transparent;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  transform-origin: center;
+  animation: zodiac-symbol-counter-spin 32s linear infinite;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+  text-shadow: 0 0 10px rgba(245, 212, 142, 0.55);
+  box-shadow: none;
+  opacity: 1;
+}
+
+.zodiac-wheel-list li:hover span {
+  transform: scale(1.06);
+}
+
+.zodiac-wheel-core {
+  width: clamp(62px, 9vw, 92px);
+  height: clamp(62px, 9vw, 92px);
+  border-radius: 999px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at 35% 35%, #f6cf86, #d5a55a 55%, #7a5427 100%);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 16px rgba(213, 165, 90, 0.6);
+  z-index: 5;
+}
+
+.zodiac-wheel-core::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  border: 2px solid rgba(241, 219, 157, 0.85);
+}
+
+@keyframes zodiac-orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes zodiac-symbol-counter-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.zodiac-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 5, 18, 0.74);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 120;
+  padding: 16px;
+}
+
+.zodiac-popup-overlay.is-open {
+  display: flex;
+}
+
+.zodiac-popup {
+  width: min(520px, 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #121c49, #0a1231);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  padding: 20px 18px 16px;
+  position: relative;
+}
+
+.zodiac-popup-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: 0;
+  background: transparent;
+  color: #e8efff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.zodiac-popup-title {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  color: #f7d89b;
+}
+
+.zodiac-popup-subtitle {
+  margin: 0 0 12px;
+  color: #b9c7f4;
+  font-size: 0.92rem;
+}
+
+.zodiac-popup-list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  color: #e9eeff;
+  margin-bottom: 12px;
+}
+
+.zodiac-popup-video-card {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(180deg, #1a244d, #101632);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.zodiac-popup-video-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(213, 165, 90, 0.65);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.zodiac-popup-video-title {
+  margin: 0 0 6px;
+  color: #eef2ff;
+  font-size: 1rem;
+}
+
+.zodiac-popup-video-desc {
+  margin: 0;
+  color: #b9c5ee;
+  font-size: 0.9rem;
+}
+
+.zodiac-popup-video-link {
+  margin-top: auto;
+  padding-top: 8px;
+  display: inline-flex;
+  color: #f2c677;
+  font-weight: 600;
+  font-size: 0.86rem;
+}
+
 .faq-list {
   max-width: none;
   width: 100%;
@@ -656,7 +1079,7 @@ details p {
 }
 
 .site-footer {
-  background: #090f23;
+  background: #070c1f;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 18px;
 }
@@ -700,6 +1123,19 @@ details p {
 }
 
 @media (max-width: 1024px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  main > #path,
+  main > #videos {
+    grid-column: 1 / -1;
+  }
+
+  main > #videos {
+    display: block;
+  }
+
   .main-nav {
     display: none;
   }
