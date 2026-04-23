@@ -748,7 +748,9 @@ main > #videos {
   --wheel-size: min(540px, 90vw);
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: url("./img/c58d078a-856c-4aed-9ff9-0bf536e245f2.jpg") center / cover no-repeat;
+  background:
+    url("./img/c58d078a-856c-4aed-9ff9-0bf536e245f2.jpg") center / cover no-repeat,
+    url("./c58d078a-856c-4aed-9ff9-0bf536e245f2.jpg") center / cover no-repeat;
   padding: 20px;
   display: grid;
   place-items: center;
