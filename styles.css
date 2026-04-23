@@ -748,8 +748,7 @@ main > #videos {
   --wheel-size: min(540px, 90vw);
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: linear-gradient(rgba(5, 10, 35, 0.45), rgba(5, 10, 35, 0.65)),
-    url("img/c58d078a-856c-4aed-9ff9-0bf536e245f2.jpg") center / cover no-repeat;
+  background: url("./img/c58d078a-856c-4aed-9ff9-0bf536e245f2.jpg") center / cover no-repeat;
   padding: 20px;
   display: grid;
   place-items: center;
@@ -768,21 +767,20 @@ main > #videos {
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background:
-    linear-gradient(rgba(7, 12, 34, 0.45), rgba(7, 12, 34, 0.55)),
-    url("img/c58d078a-856c-4aed-9ff9-0bf536e245f2.jpg") center / cover no-repeat,
+    linear-gradient(rgba(7, 12, 34, 0.28), rgba(7, 12, 34, 0.34)),
     repeating-conic-gradient(
       from -90deg,
-      rgba(255, 255, 255, 0.08) 0deg 14.2deg,
-      rgba(0, 0, 0, 0.06) 14.2deg 15deg,
+      rgba(255, 255, 255, 0.05) 0deg 14.2deg,
+      rgba(0, 0, 0, 0.03) 14.2deg 15deg,
       transparent 15deg 30deg
     ),
     repeating-conic-gradient(
       from -90deg,
-      rgba(255, 255, 255, 0.16) 0deg 0.8deg,
+      rgba(255, 255, 255, 0.1) 0deg 0.8deg,
       transparent 0.8deg 30deg
     ),
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.12), rgba(10, 16, 42, 0.85) 62%);
-  box-shadow: inset 0 0 44px rgba(8, 12, 35, 0.85), 0 10px 28px rgba(0, 0, 0, 0.3);
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.08), rgba(10, 16, 42, 0.62) 62%);
+  box-shadow: inset 0 0 36px rgba(8, 12, 35, 0.62), 0 10px 28px rgba(0, 0, 0, 0.22);
   overflow: hidden;
 }
 
@@ -796,12 +794,12 @@ main > #videos {
 
 .zodiac-wheel-circle::before {
   inset: 14%;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .zodiac-wheel-circle::after {
   inset: 27.5%;
-  border: 1px solid rgba(255, 255, 255, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.24);
 }
 
 .zodiac-icon-ring,
