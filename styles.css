@@ -107,6 +107,41 @@ img {
   color: #ffffff;
 }
 
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 18px;
+  height: 2px;
+  background: #eef2ff;
+  border-radius: 999px;
+  display: block;
+}
+
+.nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1134,8 +1169,37 @@ details p {
     display: block;
   }
 
+  .nav-wrap {
+    position: relative;
+  }
+
   .main-nav {
     display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: min(280px, 92vw);
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    background: rgba(9, 14, 37, 0.98);
+    flex-direction: column;
+    gap: 6px;
+    z-index: 30;
+  }
+
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .main-nav a {
+    width: 100%;
+    text-transform: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    margin-left: auto;
   }
 
   .container {
@@ -1237,6 +1301,16 @@ details p {
     grid-template-columns: 1fr;
   }
 
+  #topics .zodiac-item {
+    min-height: 132px;
+    padding-top: 62px;
+  }
+
+  #topics .zodiac-item::before {
+    top: 12px;
+    left: 14px;
+  }
+
   .stat-item {
     justify-content: flex-start;
   }
@@ -1326,6 +1400,11 @@ details p {
   .zodiac-item {
     min-height: 96px;
     padding: 12px;
+  }
+
+  #topics .zodiac-item {
+    min-height: 128px;
+    padding-top: 58px;
   }
 
   #topics .zodiac-item h3 {

@@ -3,6 +3,31 @@ if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
 }
 
+const navToggle = document.querySelector(".nav-toggle");
+const mainNav = document.querySelector(".main-nav");
+if (navToggle && mainNav) {
+  const closeMobileMenu = () => {
+    navToggle.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    mainNav.classList.remove("is-open");
+  };
+
+  navToggle.addEventListener("click", () => {
+    const shouldOpen = !mainNav.classList.contains("is-open");
+    navToggle.classList.toggle("is-open", shouldOpen);
+    navToggle.setAttribute("aria-expanded", String(shouldOpen));
+    mainNav.classList.toggle("is-open", shouldOpen);
+  });
+
+  mainNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMobileMenu();
+  });
+}
+
 const detailsEls = document.querySelectorAll(".faq-list details");
 detailsEls.forEach((item) => {
   item.addEventListener("toggle", () => {
